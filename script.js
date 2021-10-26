@@ -146,7 +146,7 @@ let sum8 = 0,
 
 for (let i = prompt('Введите число:'); i != false; ) {
    i = Number(i);
-   if (isNaN(i) == true) {
+   if (isNaN(i)) {
       alert('Вы ошиблись! Введите число!')
    } else {
       sum8 = sum8 + i;
@@ -165,6 +165,29 @@ task++;
 document.write(`<h2>Task ${task}</h2>`);
 console.log(`\nTask ${task}`);
 
+let strNum = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 105 36 8 57';
+let num9 = '';
+let max, min;
+
+max = strNum[0];
+min = strNum[0];
+
+for (let i = 0; i < strNum.length; i++) {
+   if (strNum[i] != ' ') {
+      num9 += strNum[i];
+   }
+   
+   if (strNum[i] == ' ' || i == (strNum.length - 1)){
+      num9 = +num9;
+      if (max <= num9) max = num9;
+      if (min >= num9) min = num9;
+      console.log(num9);
+      num9 = '';
+   }
+}
+console.log(min, max);
+
+/*
 let str9 = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57',
     arrStr = str9.split(' ');
 
@@ -194,7 +217,7 @@ for (let i = 1; i < arrStr.length; i++) {
 }
 
 console.log(`Самое большое число: ${big}; самое маленькое число: ${small}`);
-
+*/
 /* 10. Дано произвольное целое число n. Написать программу, которая:
 a. разбивает число n на цифры и выводит их на экран;
 b. подсчитывает сколько цифр в числе n;
@@ -206,6 +229,20 @@ task++;
 document.write(`<h2>Task ${task}</h2>`);
 console.log(`\nTask ${task}`);
 
+let n10 = prompt('Введите любое число', 458);
+let sum10 = 0;
+let num10 = 0;
+let revN10 = '';
+for (let i = 0; i < n10.length; i++) {
+   console.log(n10[i]);
+   num10++;
+   sum10 += +n10[i];
+   revN10 += n10[(n10.length -1) - i];
+}
+console.log(num10);
+console.log(sum10);
+console.log(revN10);
+/*
 n = prompt('Введите любое число', 458);
 
 let str10Arr = n.split('');
@@ -223,4 +260,4 @@ n = str10Arr.join('');
 
 console.log(`Количество цифр всего: ${count}`);
 console.log(`Сумма цифр: ${sum10}`);
-console.log(`Обратный порядок: ${n}`);
+console.log(`Обратный порядок: ${n}`);*/
